@@ -247,7 +247,7 @@ md-editor/
 | 2026-05-28 | v1.0.2 | 文件树切换保存拦截；窗口拖动修复（补充 core:window:allow-start-dragging 权限）；月亮按钮移入 TabBar rightSlot；注册 .md/.mdx/.markdown 文件关联；TabBar 右侧新增信封反馈按钮，点击弹出 FeedbackDialog（含引导语和邮箱展示），确认后通过 shell open 触发系统邮件客户端 | Claude |
 | 2026-05-28 | v1.0.2 修订 | 发布前审查修复：外部文件变更时若当前文件有未保存修改则跳过自动重载，避免覆盖本地编辑；Rust 原生菜单事件统一 emit 到前端并触发新建、打开工作区、保存、关闭标签、工作区查找、主题切换；修复重复标题 slug 计数，避免大纲跳转到错误章节 | Codex |
 | 2026-05-28 | v1.0.2 文档修订 | 完善 GitHub 展示：重写 README 项目首页，补充产品定位、核心亮点、适用场景、本地开发/打包、项目状态与后续计划；修正技术栈描述，将 Tailwind CSS 更正为 CSS Variables + 自定义主题 | Codex |
-| 2026-05-29 | v1.0.2 展示修订 | GitHub 展示补充：新增 3 张界面预览 SVG（工作区分栏、预览大纲、全文搜索/PDF 导出），README 增加界面预览区；新增 RELEASE_NOTES.md，准备 v1.0.1 GitHub Release 发布说明 | Codex |
+| 2026-05-29 | v1.0.2 展示修订 | GitHub 展示补充：新增 RELEASE_NOTES.md，准备 v1.0.1 GitHub Release 发布说明；经审阅暂不加入非真实应用截图，README 保持文字型项目展示 | Codex |
 
 ---
 

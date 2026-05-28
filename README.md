@@ -18,18 +18,6 @@
 MDive（墨潜）是一个以**工作区文件夹**为核心的本地 Markdown 查看与编辑工具。
 它面向开发者和技术写作者，适合配合 VS Code / Claude Code 作为实时预览器，也可以独立完成 Markdown 写作、预览、搜索和导出。
 
----
-
-## 界面预览
-
-> 以下为基于当前产品界面绘制的展示预览图。后续可替换为真实运行截图或演示 GIF。
-
-![工作区分栏预览](./docs/screenshots/workspace-preview.svg)
-
-![预览模式与文档大纲](./docs/screenshots/preview-outline.svg)
-
-![全文搜索与 PDF 导出](./docs/screenshots/search-export.svg)
-
 ## 核心亮点
 
 - **工作区优先**：启动选择文件夹，左侧文件树递归展开，多标签页并排查看
