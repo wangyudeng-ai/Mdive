@@ -57,8 +57,10 @@ const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
     if (nodes.length === 0) return;
     mermaid.initialize({ startOnLoad: false, theme: isDark ? 'dark' : 'default' });
     nodes.forEach(el => { el.removeAttribute('data-processed'); });
-    mermaid.run({ nodes: Array.from(nodes) }).catch(() => {});
-  }, [renderedHtml, isDark]);
+    mermaid.run({ nodes: Array.from(nodes) }).catch(err => {
+      console.error('Mermaid render failed:', err);
+    });
+  }, [renderedHtml, isDark, viewMode]);
 
   // Divider drag
   const handleDividerMouseDown = useCallback((e: React.MouseEvent) => {
@@ -528,6 +530,7 @@ const MarkdownViewer: React.FC<MarkdownViewerProps> = ({
             onScroll={handlePreviewScroll}
           >
             <div
+              key={`${viewMode}-${isDark ? 'dark' : 'light'}`}
               className="markdown-body"
               dangerouslySetInnerHTML={{ __html: renderedHtml }}
             />

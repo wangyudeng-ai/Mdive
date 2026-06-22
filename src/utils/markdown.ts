@@ -29,7 +29,8 @@ renderer.code = function ({ text, lang }: Tokens.Code): string {
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;');
-    return `<div class="mermaid">${escaped}</div>`;
+    const source = encodeURIComponent(text);
+    return `<div class="mermaid" data-mermaid-source="${source}">${escaped}</div>`;
   }
 
   if (lang) {
@@ -67,7 +68,7 @@ export function renderMarkdown(content: string): string {
     const html = marked.parse(content, { async: false }) as string;
     return DOMPurify.sanitize(html, {
       ADD_TAGS: ['foreignObject'],
-      ADD_ATTR: ['id', 'class', 'target', 'rel'],
+      ADD_ATTR: ['id', 'class', 'target', 'rel', 'data-mermaid-source'],
     });
   } catch {
     return `<pre>${content.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</pre>`;
